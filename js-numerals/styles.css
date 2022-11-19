@@ -1,13 +1,54 @@
-/* Styles */
+/* App Styles */
+
+html {
+    font-size: 62.5%;
+}
 
 body {
-    font-family: 'Fira Sans', sans-serif;
-    background-color: gainsboro;  
-  }
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 1.6rem;
+  color:white;
+  background-color: white;
+  text-align: center;
+}
+
+#container {
+    background-color: #6743F9;
+    margin: 2rem 4rem 2rem 4rem;
+    height: 800px;
+}
+
+#app-title {
+    font-family: 'Norican', cursive;
+    font-size: 50px;
+    padding: 7rem 0rem 0rem 0rem;
+}
+
+#app-subtitle {
+    font-family: 'Kalam', cursive;
+    font-size: 2.5rem;
+}
+
+#number-input {
+    font-family: 'Source Sans Pro', cursive;
+    margin: 2rem auto 2rem auto;
+    font-size: 3.5rem;
+    width: 300px;
+    border: none;
+}
+
+#text-output {
+    margin: 1rem;
+    font-size: 2.5rem;
+}
 
 
 
 
 
 
-  
+
+
+
+
+
