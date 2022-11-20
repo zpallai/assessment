@@ -4,18 +4,23 @@
 const first = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"];
 const teens = ["ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
 const second = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
-const higher = [" ", " thousand ", " million ", " billion ", "trillion ", " googleplex "];
+const higher = [" ", " thousand ", " million ", " billion ", " trillion ", " would think it's a googolplex "];
 
 // Return all digits less than a thousand
-function to_thousand(number) {
+export function to_thousand(number) {
     let og_number = number;
+    let str_number = number.toString();
     while( number.charAt(0) === '0')
     {
       number = number.substring(1);
     }
     number = parseInt(number);
+
+    if (og_number == "00" || og_number === "000") {
+        return "";
+    }
     
-    if (number <= 10) {
+    else if (number <= 10) {
         if (og_number.charAt(1) === '0') {
             return "and " + first[number];
         }
@@ -25,12 +30,21 @@ function to_thousand(number) {
     }
 
     else if (number > 10 && number < 20) {
-        return teens[og_number[-1]];
+        number = number.toString();
+        if (str_number[0] == "0") {
+            return "and " + teens[number[1]];
+        }
+        else {
+            return teens[number[1]];
+        }
     }
 
     else if (number >= 20 && number < 100) {
         number = number.toString();
-        if (number[1] == 0) {
+        if (str_number[2] == 0) {
+            return "and " + second[number[0]];
+        }
+        else if (number[1] == 0) {
             return second[number[0]];
         }
         else {
@@ -59,7 +73,7 @@ function to_thousand(number) {
 }
 
 // Split numbers on thousands place (comma separator)
-function split_thousands(number) {
+export function split_thousands(number) {
     let temp = [];
     let final = [];
     let x = 0;
@@ -80,14 +94,20 @@ function split_thousands(number) {
 }
 
 // Assemble final string by converting numbers split by thousands
-function final_words(number) {
+export function final_words(number) {
     let word = "";
     let words = "";
     let number_split = split_thousands(number);
     let thousands = number_split.length;
+    if (number === 0) {
+        return "zero";
+    }
     for (var x = 0; x < number_split.length; x++ ) {
         word = to_thousand(number_split[x]);
-        if (thousands > 1) {
+        if (number_split[x] == "0" || number_split[x] == "00" || number_split[x] === "000") {
+            continue;
+        }
+        else if (thousands > 1) {
             words += word + higher[thousands - 1];
             thousands--;
         }
@@ -97,9 +117,6 @@ function final_words(number) {
     }
     return words;
 }
-
-console.log(final_words(1300420));
-
 
 
 
