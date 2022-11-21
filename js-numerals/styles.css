@@ -6,7 +6,6 @@ html {
 
 body {
   font-family: 'Fira Sans', sans-serif;
-  font-size: 1.6rem;
   color:white;
   background-color: white;
   text-align: center;
@@ -14,17 +13,22 @@ body {
 
 #container {
     background-color: #6743F9;
-    margin: 2rem 4rem 2rem 4rem;
+    margin: 2rem 4rem;
     border:solid 5px #A894FA;
     border-radius: 150px 10px;
     transform: skew(-2deg);
-    box-shadow: 0px 16px 40px 0px #1765F5;
-    height: 800px;
+    box-shadow: 0px 12px 60px 0px #1765F5;
+    height: 90vh;
+    overflow: scroll;
+}
+
+#interface-container {
+    padding: 1rem 2rem;
 }
 
 #app-title {
     font-family: 'Norican', cursive;
-    font-size: 50px;
+    font-size: 7rem;
     font-weight: 300;
     margin: 5rem 0rem 0rem 0rem;
     text-shadow: -15px 10px 20px #A894FA;
@@ -32,29 +36,85 @@ body {
 
 #app-subtitle {
     font-family: 'Kalam', cursive;
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin: 1rem 0rem 0rem 0rem;
 }
 
 #number-input {
     font-family: 'Source Sans Pro', cursive;
-    margin: 2rem auto 2rem auto;
-    font-size: 3.5rem;
-    width: 300px;
+    margin: 2rem auto 3rem auto;
+    font-size: 4rem;
+    width: 320px;
     border: none;
 }
 
 #text-output {
-    margin: 1rem;
     font-size: 2.5rem;
+    margin-top: 3rem;
 }
 
+#numbers-data {
+    display: flex;
+    font-size: 2rem;
+    justify-content: center;
+    margin-top: 3rem;
+}
 
+#numbers-data p {
+    margin: 1rem 3rem;
+}
 
+#facts {
+    font-size: 2.5rem;
+    margin-top: 3rem;
+}
 
+#peregrine {
+    margin-top: 3rem;
+}
 
+@media (max-width: 700px) {
 
+    #app-title {
+        font-size: 4rem;
+        margin: 6rem 0rem 2rem 0rem;
+    }
 
+    #app-subtitle {
+        font-size: 2rem;
+        margin-top: 0rem;
+    }
+
+    #number-input {
+        font-size: 2rem;
+        width: 200px;
+        border: none;
+        margin: 1rem auto 1rem auto;
+    }
+
+    #text-output {
+        font-size: 1.8rem;
+    }
+
+    #numbers-data {
+        font-size: 1.5rem;
+        margin-top: 1rem;
+    }
+
+    #numbers-data p {
+        font-size: 1.5rem;
+    }
+
+    #facts {
+        font-size: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    #peregrine {
+        font-size: 1.5rem;
+        margin-top: 2rem;
+    }
+}
 
 
 

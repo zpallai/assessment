@@ -118,8 +118,9 @@ export function final_words(number) {
     return words;
 }
 
-
-
+export function calculate_thousands(number) {
+    return Math.ceil(number/3);
+}
 
 
 

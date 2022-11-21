@@ -1,5 +1,5 @@
 // Algorithm Tests
-import { final_words } from "/convert.js";
+import { final_words } from "/js-numerals/convert.js";
 
 function test(parameter, expected) {
     let output = final_words(parameter);
@@ -32,9 +32,7 @@ test(1234567890123, "one trillion two hundred and thirty-four billion five hundr
 test(1000, "one thousand")
 test(100000000, "one hundred million")
 test(1000000000000000, "one would think it's a googolplex")
-
-
-
+test(320000000, "falcon")
 
 
 
